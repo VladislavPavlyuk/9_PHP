@@ -1,0 +1,32 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+form {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #efefef;
+  background: #f2f2f2;
+}
+input {
+  width: 100%;
+  padding: 10px;
+}
+input[type=text], input[type=email], input[type=password] {
+  margin-bottom: 10px;
+  border: 1px solid #d1d1d1;
+}
+input[type=button], input[type=submit] {
+  margin-top: 10px;
+  border: 0;
+  color: #fff;
+  background: #2441d1;
+  cursor: pointer;
+}
+.note {
+  width: 400px;
+  margin-top: 20px;
+  padding: 10px;
+  color: #333;
+  background: #e2e7ff;
+}
