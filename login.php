@@ -2,12 +2,11 @@
 // (A) LOAD LIBRARY
 require "adminLib.php";
 
-
-function gotoRegistrationPage()
-{
+if(isset($_Post['Registration'])){
     header("Location: registration.php");
     exit();
 }
+
 
 // (B) CHECK LOGIN CREDENTIALS
 if (count($_POST)!=0) {
@@ -32,19 +31,21 @@ if (isset($_SESSION["admin"])) {
     <?php
     if ($_ADM->error!="") { echo "<div class='error'>".$_ADM->error."</div>"; }
     ?>
-    <form method="post">
+    <form action="login.php" method="post">
       <h1>LOGIN</h1>
       <label>Email</label>
       <input type="email" name="email" required>
       <label>Password</label>
       <input type="password" name="password" required>
       <input type="submit" value="Login">
-
-
-        <br><a type="submit"  href="#Reg" value="Registration">Registration</a>
-
+        <br><a href="#Reg" id="myBtn" >Registration</a>
     </form>
-
+    <script>
+        var btn = document.getElementById('myBtn');
+        btn.addEventListener('click', function() {
+            document.location.href = '<?php echo 'Registration.php'; ?>'; // Replace with your PHP variable or expression
+        });
+    </script>
   </body>
 </html>
 
